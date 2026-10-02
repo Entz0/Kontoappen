@@ -58,7 +58,25 @@ public class Main {
                 }
             } else if (choice == 4) {
 
-                System.out.println("Uttag kommer snart.");
+                System.out.println("Ange namn på kontot: ");
+                String name = scanner.nextLine();
+
+                Account found = register.findAccount(name);
+
+                if (found != null) {
+
+                    System.out.println("Ange belopp att ta ut: ");
+                    int amount = scanner.nextInt();
+                    scanner.nextLine();
+
+                    found.withdraw(amount);
+
+                    System.out.println("Saldo för " +  found.getName() + " " + found.getBalance() + "kr");
+                } else  {
+
+                    System.out.println("Konto saknas: " + name);
+                }
+
             } else if (choice == 5) {
 
                 System.out.println("Hej då!");

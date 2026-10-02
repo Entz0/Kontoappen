@@ -18,4 +18,13 @@ public class Account {
     public void deposit(int amount) {
         balance = balance + amount;
     }
+
+    public void withdraw(int amount) {
+        if (amount <= balance) {
+            balance = balance - amount;
+
+        } else  {
+            System.out.println("Du har inte tillräckligt med pengar.");
+        }
+    }
 }
